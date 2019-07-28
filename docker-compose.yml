@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - backend
+  weather-service:
+    image: barret73/weather-forecast
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+    environment:
+      - OPENWEATHER_APPID=${OPENWEATHER_APPID}
+      - SPRING_ZIPKIN_BASEURL=http://zipkin:9411
+networks:
+  backend:
