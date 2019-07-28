@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "open-weather")
+@ConfigurationProperties(prefix = "openweather")
 public class OpenWeatherConfig {
 
     private String endpoint;
